@@ -33,7 +33,11 @@ public class BarcodeScannerProcessor extends VisionProcessorBase<List<Barcode>> 
 
         // Comment this code if you want to allow open Barcode format.
         BarcodeScannerOptions options = new BarcodeScannerOptions.Builder()
-                .setBarcodeFormats(Barcode.FORMAT_QR_CODE, Barcode.FORMAT_CODE_39)
+                .setBarcodeFormats(
+                        Barcode.FORMAT_EAN_13,
+                        Barcode.FORMAT_UPC_A,
+                        Barcode.FORMAT_QR_CODE,
+                        Barcode.FORMAT_CODE_39)
                 .build();
 
         barcodeScanner = BarcodeScanning.getClient(options);
